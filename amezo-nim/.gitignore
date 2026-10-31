@@ -1,0 +1,34 @@
+# ビルド成果物 (build.sh で作り直せる)
+/amezo.cgi
+/dai.cgi
+/admin.cgi
+/jump.cgi
+/archive
+/server
+/tests/test_bbs
+nimcache/
+
+# 実行時に作られる秘密・状態ファイル
+trip_secret.txt
+trip_secret.txt.tmp*
+id_secret.txt
+id_secret.txt.tmp*
+key_secret.txt
+jump_secret.txt
+delpass.txt
+cap.txt
+adminpass.txt
+global.mem
+admin_fail.mem
+config.ini
+keys.txt
+*.lock
+*.tmp*
+
+# 運用データ
+/main/
+/zatsu/
+/test/
+*.html.gz
+*.html.bad
+admin.cgi.bak

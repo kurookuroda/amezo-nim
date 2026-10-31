@@ -1,0 +1,20 @@
+body { font-family: sans-serif; }
+img { max-width: 100%; height: auto; }
+input[type=text], textarea { max-width: 100%; box-sizing: border-box; }
+
+.bbslist { margin: 6px 0; }
+.bbslist a { margin-right: 0.8em; white-space: nowrap; line-height: 1.9; }
+.notice { border: 1px solid #999; padding: 6px 10px; margin: 8px 0; font-size: small; }
+
+/* 投稿フォーム: 「投稿者・メール」→ textarea → ボタン */
+form.post { margin: 14px 0 10px; }
+form.post .row { margin: 0 0 8px; line-height: 1.9; }
+form.post textarea { display: block; width: 100%; max-width: 44em; margin: 0 0 10px; }
+form.post input[type=submit] { padding: 6px 20px; }
+form.post .links { margin: 10px 0 0; font-size: small; }
+form.post .links a { margin-right: 0.8em; white-space: nowrap; }
+
+/* ID / トリップ非表示 (hide.js) */
+.abone dd, .abone dt font { display: none; }
+.abone dt::after { content: " あぼーん"; color: gray; }
+.hidebtns a { font-size: x-small; margin-left: 0.4em; white-space: nowrap; }

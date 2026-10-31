@@ -1,0 +1,208 @@
+{
+ "trip": {
+  "password1": "uNOYeAqNci",
+  "あめぞう": "QLS7fUD83l",
+  "test#123": "dVE_ZjnW9Y",
+  "ＡＢＣ１２３": "x1RQxWKaqG",
+  "a b c": "gJSkqgMRzq",
+  "　": "",
+  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": "lmIHYmRyo3",
+  "パスワード#2": "QihAa68sFl"
+ },
+ "id": {
+  "192.0.2.1|main": "lPpzUULl",
+  "2001:db8:85a3::8a2e:370:7334|main": "5tDeqOjy",
+  "2001:db8:85a3::ffff:1111|main": "5tDeqOjy",
+  "203.0.113.9|zatsu": "cPavOUfp",
+  "|main": "VxINBX23"
+ },
+ "ip_unit": {
+  "192.0.2.1": "192.0.2.1",
+  "2001:db8:85a3::8a2e:370:7334": "20010db885a30000",
+  "2001:db8::1": "20010db800000000",
+  "::1": "0000000000000000",
+  "not-an-ip": "not-an-ip",
+  "": ""
+ },
+ "clean_trip": {
+  "ＡＢＣ！～": "ABC!~",
+  " a　b ": "ab",
+  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+ },
+ "escape": {
+  "<a href=\"x\">&'": "&lt;a href=&quot;x&quot;&gt;&amp;&#39;",
+  "普通の文": "普通の文",
+  "&amp;": "&amp;amp;"
+ },
+ "chars_len": {
+  "&amp;&lt;x": 3,
+  "あいう": 3,
+  "a<br>b": 6
+ },
+ "ccut": {
+  "&amp;あいうえお|3": "&amp;あい",
+  "abcdef|4": "abcd",
+  "あいう|10": "あいう"
+ },
+ "hash": {
+  "stored": "pbkdf2_sha256$1000$00112233445566778899aabbccddeeff$cdfa211d3484d8240629a983ed3e250c26449b4af0ffe26b59252d368a102627",
+  "verify_ok": true,
+  "verify_ng": false
+ },
+ "cap": {
+  "hit": true,
+  "miss_pw": false,
+  "miss_name": false
+ },
+ "jump_sign": {
+  "https://a.com/?x=1&y=2": "m9RLaN9RySsFK_S0IaRuyy",
+  "http://example.jp/path": "m-L7jFb3Rc4ssZBdu22VV1",
+  "https://xn--wgv71a.example/": "CUJy_uM0GJ8gblKwJH-Wr1"
+ },
+ "b64url": {
+  "https://a.com/": "aHR0cHM6Ly9hLmNvbS8",
+  "???>>>": "Pz8_Pj4-",
+  "あ": "44GC"
+ },
+ "url_valid": {
+  "https://a.com/": true,
+  "http://[::1]/x": true,
+  "javascript:alert(1)": false,
+  "https://a.com/\"x": false,
+  "ftp://a.com/": false,
+  "https://": false,
+  "https://a .com/": false,
+  "https://a.com/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": false
+ },
+ "linkify": [
+  {
+   "in": "テスト https://a.com/?x=1&amp;y=2 です",
+   "jump": "テスト <a href=\"../jump.cgi?u=aHR0cHM6Ly9hLmNvbS8_eD0xJnk9Mg&amp;s=m9RLaN9RySsFK_S0IaRuyy\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/?x=1&amp;y=2</a> です",
+   "direct": "テスト <a href=\"https://a.com/?x=1&amp;y=2\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/?x=1&amp;y=2</a> です"
+  },
+  {
+   "in": "(https://a.com/b).",
+   "jump": "(<a href=\"../jump.cgi?u=aHR0cHM6Ly9hLmNvbS9i&amp;s=j9eXMEGcO9-iBuZa2ood1Y\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/b</a>).",
+   "direct": "(<a href=\"https://a.com/b\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/b</a>)."
+  },
+  {
+   "in": "https://a.com/bです",
+   "jump": "<a href=\"../jump.cgi?u=aHR0cHM6Ly9hLmNvbS9i&amp;s=j9eXMEGcO9-iBuZa2ood1Y\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/b</a>です",
+   "direct": "<a href=\"https://a.com/b\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/b</a>です"
+  },
+  {
+   "in": "url: https://a.com/x,&quot; onmouseover=&quot;alert(1)",
+   "jump": "url: <a href=\"../jump.cgi?u=aHR0cHM6Ly9hLmNvbS94&amp;s=vDzxa2hbez-FG5T8x-DQvy\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/x</a>,&quot; onmouseover=&quot;alert(1)",
+   "direct": "url: <a href=\"https://a.com/x\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/x</a>,&quot; onmouseover=&quot;alert(1)"
+  },
+  {
+   "in": "複数 https://one.example/1 と http://two.example/2?a=b&amp;c=d 終わり",
+   "jump": "複数 <a href=\"../jump.cgi?u=aHR0cHM6Ly9vbmUuZXhhbXBsZS8x&amp;s=9UHlKE3PVB4kRBF_9A_8jd\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://one.example/1</a> と <a href=\"../jump.cgi?u=aHR0cDovL3R3by5leGFtcGxlLzI_YT1iJmM9ZA&amp;s=OAgZKz6Mzuql1P2rs6VzyB\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">http://two.example/2?a=b&amp;c=d</a> 終わり",
+   "direct": "複数 <a href=\"https://one.example/1\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://one.example/1</a> と <a href=\"http://two.example/2?a=b&amp;c=d\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">http://two.example/2?a=b&amp;c=d</a> 終わり"
+  },
+  {
+   "in": "https://a.com/[bracket] と https://a.com/(paren)",
+   "jump": "<a href=\"../jump.cgi?u=aHR0cHM6Ly9hLmNvbS9bYnJhY2tldF0&amp;s=E3Rq5gzcAu1JszSUPS8DEj\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/[bracket]</a> と <a href=\"../jump.cgi?u=aHR0cHM6Ly9hLmNvbS8ocGFyZW4p&amp;s=VyFRNX3xzD43S3_na7cOaJ\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/(paren)</a>",
+   "direct": "<a href=\"https://a.com/[bracket]\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/[bracket]</a> と <a href=\"https://a.com/(paren)\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">https://a.com/(paren)</a>"
+  },
+  {
+   "in": "URLなし",
+   "jump": "URLなし",
+   "direct": "URLなし"
+  }
+ ],
+ "base32": {
+  "000000000000000000000000000000": "AAAAAAAAAAAAAAAAAAAAAAAA",
+  "ffffffffffffffffffffffffffffff": "777777777777777777777777",
+  "0123456789abcdeffedcba98765432": "AERUKZ4JVPG677W4XKMHMVBS"
+ },
+ "key_normalize": {
+  "abcd-efgh-ijkl-mnop-qrst-uvwx": "ABCDEFGHIJKLMNOPQRSTUVWX",
+  "ABCDEFGHIJKLMNOPQRSTUVWX": "ABCDEFGHIJKLMNOPQRSTUVWX",
+  "abcdefghijklmnopqrstuvwx": "ABCDEFGHIJKLMNOPQRSTUVWX",
+  "short": null,
+  "ABCDEFGHIJKLMNOPQRSTUVW1": null
+ },
+ "key_display": {
+  "ABCDEFGHIJKLMNOPQRSTUVWX": "ABCD-EFGH-IJKL-MNOP-QRST-UVWX"
+ },
+ "key_hash": {
+  "ABCDEFGHIJKLMNOPQRSTUVWX": "e8d89927d34ecc5c305b5f4395697a42e1db152d91d3f9a6c52c77a22bf66e50"
+ },
+ "pager": {
+  "1|1": "",
+  "1|3": "<div class=\"row links pager\"><b>[1]</b> <a href=\"../amezo.cgi?folder=main&amp;page=2\">2</a> <a href=\"../amezo.cgi?folder=main&amp;page=3\">3</a>　<a href=\"../amezo.cgi?folder=main&amp;page=2\">次の20件 →</a></div>\n",
+  "2|3": "<div class=\"row links pager\"><a href=\"./\">← 前の20件</a>　<a href=\"./\">1</a> <b>[2]</b> <a href=\"../amezo.cgi?folder=main&amp;page=3\">3</a>　<a href=\"../amezo.cgi?folder=main&amp;page=3\">次の20件 →</a></div>\n",
+  "3|3": "<div class=\"row links pager\"><a href=\"../amezo.cgi?folder=main&amp;page=2\">← 前の20件</a>　<a href=\"./\">1</a> <a href=\"../amezo.cgi?folder=main&amp;page=2\">2</a> <b>[3]</b></div>\n",
+  "1|10": "<div class=\"row links pager\"><b>[1]</b> <a href=\"../amezo.cgi?folder=main&amp;page=2\">2</a> <a href=\"../amezo.cgi?folder=main&amp;page=3\">3</a> <a href=\"../amezo.cgi?folder=main&amp;page=4\">4</a> <a href=\"../amezo.cgi?folder=main&amp;page=5\">5</a> <a href=\"../amezo.cgi?folder=main&amp;page=6\">6</a> <a href=\"../amezo.cgi?folder=main&amp;page=7\">7</a> <a href=\"../amezo.cgi?folder=main&amp;page=8\">8</a> <a href=\"../amezo.cgi?folder=main&amp;page=9\">9</a> <a href=\"../amezo.cgi?folder=main&amp;page=10\">10</a>　<a href=\"../amezo.cgi?folder=main&amp;page=2\">次の20件 →</a></div>\n",
+  "5|10": "<div class=\"row links pager\"><a href=\"../amezo.cgi?folder=main&amp;page=4\">← 前の20件</a>　<a href=\"./\">1</a> <a href=\"../amezo.cgi?folder=main&amp;page=2\">2</a> <a href=\"../amezo.cgi?folder=main&amp;page=3\">3</a> <a href=\"../amezo.cgi?folder=main&amp;page=4\">4</a> <b>[5]</b> <a href=\"../amezo.cgi?folder=main&amp;page=6\">6</a> <a href=\"../amezo.cgi?folder=main&amp;page=7\">7</a> <a href=\"../amezo.cgi?folder=main&amp;page=8\">8</a> <a href=\"../amezo.cgi?folder=main&amp;page=9\">9</a> <a href=\"../amezo.cgi?folder=main&amp;page=10\">10</a>　<a href=\"../amezo.cgi?folder=main&amp;page=6\">次の20件 →</a></div>\n",
+  "10|20": "<div class=\"row links pager\"><a href=\"../amezo.cgi?folder=main&amp;page=9\">← 前の20件</a>　<a href=\"./\">1</a> … <a href=\"../amezo.cgi?folder=main&amp;page=8\">8</a> <a href=\"../amezo.cgi?folder=main&amp;page=9\">9</a> <b>[10]</b> <a href=\"../amezo.cgi?folder=main&amp;page=11\">11</a> <a href=\"../amezo.cgi?folder=main&amp;page=12\">12</a> … <a href=\"../amezo.cgi?folder=main&amp;page=20\">20</a>　<a href=\"../amezo.cgi?folder=main&amp;page=11\">次の20件 →</a></div>\n",
+  "1|20": "<div class=\"row links pager\"><b>[1]</b> <a href=\"../amezo.cgi?folder=main&amp;page=2\">2</a> <a href=\"../amezo.cgi?folder=main&amp;page=3\">3</a> … <a href=\"../amezo.cgi?folder=main&amp;page=20\">20</a>　<a href=\"../amezo.cgi?folder=main&amp;page=2\">次の20件 →</a></div>\n",
+  "20|20": "<div class=\"row links pager\"><a href=\"../amezo.cgi?folder=main&amp;page=19\">← 前の20件</a>　<a href=\"./\">1</a> … <a href=\"../amezo.cgi?folder=main&amp;page=18\">18</a> <a href=\"../amezo.cgi?folder=main&amp;page=19\">19</a> <b>[20]</b></div>\n",
+  "7|11": "<div class=\"row links pager\"><a href=\"../amezo.cgi?folder=main&amp;page=6\">← 前の20件</a>　<a href=\"./\">1</a> … <a href=\"../amezo.cgi?folder=main&amp;page=5\">5</a> <a href=\"../amezo.cgi?folder=main&amp;page=6\">6</a> <b>[7]</b> <a href=\"../amezo.cgi?folder=main&amp;page=8\">8</a> <a href=\"../amezo.cgi?folder=main&amp;page=9\">9</a> … <a href=\"../amezo.cgi?folder=main&amp;page=11\">11</a>　<a href=\"../amezo.cgi?folder=main&amp;page=8\">次の20件 →</a></div>\n"
+ },
+ "to_utf8": {
+  "44GC44KB44Ge44GG": "あめぞう",
+  "gqCC34K8gqQ=": "あめぞう",
+  "YWJj//4=": "abc",
+  "": ""
+ },
+ "strip_invisible": {
+  "a​b": "ab",
+  "﻿x­": "x"
+ },
+ "config": {
+  "basic": [
+   {
+    "POST_INTERVAL": 7,
+    "MAX_THREADS": 50,
+    "JUMP_ENABLED": false,
+    "AMEZO": "＠テスト",
+    "TRUSTED_PROXIES": [
+     "127.0.0.1",
+     "::1"
+    ],
+    "URLBASE": "http://example.com/"
+   },
+   []
+  ],
+  "empty_proxies": [
+   {
+    "TRUSTED_PROXIES": []
+   },
+   []
+  ],
+  "syntax": [
+   {},
+   [
+    "読み込めません (書き方の誤り)"
+   ]
+  ],
+  "dup": [
+   {
+    "MAX_THREADS": 10
+   },
+   [
+    "POST_INTERVAL: 0〜3600 の範囲外です"
+   ]
+  ],
+  "bad_admin": [
+   {},
+   [
+    "ADMIN: 使えない文字 (制御文字 < > \" ' & $ \\) を含みます"
+   ]
+  ],
+  "bad_int": [
+   {},
+   [
+    "POST_INTERVAL: 整数ではありません"
+   ]
+  ],
+  "unknown": [
+   {},
+   [
+    "不明なキー: UNKNOWN_KEY"
+   ]
+  ]
+ }
+}

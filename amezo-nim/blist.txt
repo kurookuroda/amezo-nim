@@ -1,0 +1,3 @@
+main,#ddeedd,広場
+zatsu,#ffeedd,雑談
+test,#ffffff,テスト
